@@ -73,7 +73,7 @@ The best agents aren’t the ones with the biggest contexts,
 but the ones with the **best-curated ones**.
 
 ## Reference
-Anthropic. (2025, September 29). *Effective context engineering for AI agents.* https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+[Anthropic. (2025, September 29). *Effective context engineering for AI agents.*](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
 
 ## Related
 - [[Why Claude Code vs Other Agents]] - How different AI coding tools implement (or ignore) context engineering
