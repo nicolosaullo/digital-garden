@@ -5,8 +5,6 @@ id: home
 permalink: /
 ---
 
-# Welcome! 🌱
-
 Thoughts, fragments and experiments about building with AI.
 
 <p style="padding: 3em 1em; background: #f5f7ff; border-radius: 4px;">
