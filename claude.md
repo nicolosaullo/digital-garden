@@ -56,7 +56,7 @@ The Jekyll plugin automatically creates bidirectional links between notes.
 ## Configuration
 
 Key settings in `_config.yml`:
-- `title`: Site title (currently "My digital garden")
+- `title`: Site title (currently "Substrate")
 - `baseurl`: Base URL for deployment
 - `use_html_extension`: Set to true if host requires .html extensions
 - `open_external_links_in_new_tab`: Controls external link behavior
