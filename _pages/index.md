@@ -7,11 +7,11 @@ permalink: /
 
 # Welcome! 🌱
 
-<p style="padding: 3em 1em; background: #f5f7ff; border-radius: 4px;">
-  Take a look at <span style="font-weight: bold">[[Your first note]]</span> to get started on your exploration.
-</p>
-
 Thoughts, fragments and experiments about building with AI.
+
+<p style="padding: 3em 1em; background: #f5f7ff; border-radius: 4px;">
+  Take a look at <span style="font-weight: bold">[[sublation-101]]</span> to get started with Sublation-os.
+</p>
 
 <strong>Recently updated notes</strong>
 
