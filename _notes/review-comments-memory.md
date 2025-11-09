@@ -1,8 +1,8 @@
 ---
-title: Extract PR feedback into institutional knowledge
+title: extract PR feedback into institutional knowledge
 ---
 
-# Learn from Code Review
+# learn from code review
 
 Extract review insights from GitHub PRs. Parse patterns. Preserve lessons. Prevent regressions.
 

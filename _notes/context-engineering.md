@@ -1,8 +1,6 @@
 ---
-title: Context Engineering
+title: context engineering
 ---
-
-# context engineering
 
 ## core idea
 

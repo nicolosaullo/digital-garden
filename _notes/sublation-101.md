@@ -1,7 +1,6 @@
 ---
-title: Sublation 101
+title: sublation 101
 ---
-# Sublation 101
 
 A six-step loop from raw idea to deployed, learned-from code.
 
@@ -9,17 +8,30 @@ A six-step loop from raw idea to deployed, learned-from code.
 
 ## the loop
 
-**1. `/shape-spec`** – Input: Idea | Output: requirements.md | Resolves: Ambiguity
+**1. `/shape-spec`**
+Input: Idea
+Output: requirements.md
+Resolves: Ambiguity
 
-**2. `/write-spec`** – Input: Requirements | Output: spec.md | Resolves: Redundancy
+**2. `/write-spec`** 
+Input: Requirements
+Output: spec.md
+Resolves: Redundancy
 
-**3. `/create-tasks`** – Input: Spec | Output: tasks.md | Resolves: Disorder
+**3. `/create-tasks`**
+Input: Spec
+Output: tasks.md
+Resolves: Disorder
 
-**4. `/implement-tasks`** – Input: Tasks | Output: Code + learnings | Resolves: Knowledge loss
+**4. `/implement-tasks`**
+Input: Tasks 
+Output: Code 
+Resolves: Time
 
-**5. `/learn`** – Input: Observations | Output: memory/*.md | Resolves: Forgotten patterns
-
-**6. Maintain** – Input: Standards + memory | Output: Synchronized agents | Resolves: Drift
+**5. `/learn`** 
+Input: Observations 
+Output: memory/*.md 
+Resolves: Forgotten patterns
 
 ---
 
