@@ -1,7 +1,7 @@
 ---
-title: The Sublation-OS Feature Development Workflow
+title: Sublation 101
 ---
-# The Sublation-OS Feature Development Workflow
+# Sublation 101
 
 A complete guide to building features using sublation-os's six-step framework.
 
