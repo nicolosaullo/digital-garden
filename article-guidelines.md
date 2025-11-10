@@ -6,9 +6,19 @@ title: Article Writing Guidelines — Sublation Aesthetic
 
 Style principles for writing technical documentation in the Sublation aesthetic: precise, minimal, system-like.
 
----
+## unified styling decisions
 
-## Core Principles
+Applied across all articles in this digital garden:
+
+**Section Separators:** Use heading hierarchy only. No horizontal rules (---) between sections.
+
+**Opening Style:** Plain descriptive sentence after front matter. No bold definitions, no H1 headings.
+
+**Closing Sections:** All articles include a "related" section with [[double-bracket]] links to connected notes.
+
+**Code Formatting:** Always use fenced code blocks with language specifiers (```bash, ```markdown, etc.). Never use plain text for commands.
+
+## core principles
 
 ### 1. Precision Over Persuasion
 
@@ -22,8 +32,6 @@ Delete every phrase that sounds like selling.
 
 The tone is **inevitable, not inspiring**. Confident because it doesn't need to explain itself.
 
----
-
 ### 2. Compress Explanations into Single Clauses
 
 Corporate writing explains the "why" at length. Technical writing implies the why through clean structure.
@@ -35,8 +43,6 @@ Corporate writing explains the "why" at length. Technical writing implies the wh
 > Clarify what you're building before design begins.
 
 Every sentence should feel **executable** — something that could almost run in a shell.
-
----
 
 ### 3. Use Declarative Fragments
 
@@ -50,8 +56,6 @@ Replace full sentences with declarative phrases. Reads like configuration.
 
 **Same meaning, 60% shorter, infinitely sharper.**
 
----
-
 ### 4. Reduce Syntactic Decoration
 
 Drop filler connectives: that, which, ensures that, so that, etc.
@@ -62,8 +66,6 @@ Turn multi-clause sentences into short, parallel statements.
 
 **Do:**
 > /write-spec turns requirements into a build plan.
-
----
 
 ### 5. Adopt Sparse, Slightly Detached Tone
 
@@ -80,8 +82,6 @@ Use neutral voice or imperative form — not cold, but machine-like.
 
 Feels like system documentation, not onboarding copy.
 
----
-
 ### 6. Embrace Repetition When It Serves Rhythm
 
 Avoid repeating key words in corporate writing. Anchor on them in minimalist writing.
@@ -96,8 +96,6 @@ Example — each step begins with action verb:
 - Maintain **synchronizes**
 
 Reads like a command index — rhythmic and mechanical, almost poetic.
-
----
 
 ### 7. Cut Transitional Clutter
 
@@ -114,8 +112,6 @@ Readers infer sequence from numbering. Replace with visual minimalism — clear 
 3. Refine if gaps found
 ```
 
----
-
 ### 8. Use Typographic Hierarchy, Not Verbal Emphasis
 
 Let whitespace and typography carry structure instead of sentences like "In summary," "To conclude," etc.
@@ -128,10 +124,8 @@ Let whitespace and typography carry structure instead of sentences like "In summ
 
 Example structure:
 ```
----
 ## Step 4 — /implement-tasks
 Execute and verify task groups.
----
 
 **Input:** tasks.md, spec.md
 **Output:** Code, verifications, learnings
@@ -142,8 +136,6 @@ Execute and verify task groups.
 2. Build
 3. Verify
 ```
-
----
 
 ### 9. Inject Low-Level Engineering Vocabulary
 
@@ -159,8 +151,6 @@ Swap "leverages," "ensures," and "collaborates" with verbs that sound like proce
 
 They imply computation — which fits technical documentation.
 
----
-
 ### 10. End With Recursion, Not Inspiration
 
 Corporate docs end with "Key takeaways."
@@ -175,8 +165,6 @@ Technical documentation ends with loops.
 
 Minimalist and philosophical.
 
----
-
 ### 11. Use Lowercase Headings
 
 Avoid title case. Headings feel machine-like when left lowercase.
@@ -189,9 +177,7 @@ Avoid title case. Headings feel machine-like when left lowercase.
 
 Reads like configuration, not marketing. Preserves minimalist visual rhythm.
 
----
-
-## Structural Pattern
+## structural pattern
 
 Use this pattern for reference articles (especially procedural content):
 
@@ -210,9 +196,7 @@ One-line purpose.
 (Minimal, code-focused)
 ```
 
----
-
-## Quick Reference: Before/After
+## quick reference: before/after
 
 ### Example 1: Descriptive Paragraph
 
@@ -222,8 +206,6 @@ One-line purpose.
 **After:**
 > /shape-spec gathers requirements through three phases: initialize, question, refine. Clarity before design.
 
----
-
 ### Example 2: Explanation Section
 
 **Before:**
@@ -231,8 +213,6 @@ One-line purpose.
 
 **After:**
 > /implement-tasks executes task groups. Implements, tests, records insight.
-
----
 
 ### Example 3: Closing Statement
 
@@ -244,9 +224,7 @@ One-line purpose.
 > Every feature feeds the next.
 > The system learns itself.
 
----
-
-## Table Formatting
+## table formatting
 
 Keep tables minimal. Use them for reference, not explanation.
 
@@ -265,9 +243,7 @@ Keep tables minimal. Use them for reference, not explanation.
 | `/shape-spec` | Clarifies the problem with targeted questions and visual assets | Ensures you're building the right thing |
 ```
 
----
-
-## Checklist for Article Review
+## checklist for article review
 
 - [ ] No persuasive language ("designed to," "ensures," "helps you")
 - [ ] Sentences compress to single clauses or fragments
@@ -280,10 +256,11 @@ Keep tables minimal. Use them for reference, not explanation.
 - [ ] Tables are minimal and reference-focused
 - [ ] Repetition of key words creates rhythm
 - [ ] Headings use lowercase, not title case
+- [ ] No horizontal rules (---) between sections
+- [ ] Code examples use fenced blocks with language specifiers
+- [ ] Articles end with "related" section containing [[wiki-links]]
 
----
-
-## Tone Reference
+## tone reference
 
 | Avoid | Adopt |
 |-------|-------|
@@ -295,9 +272,7 @@ Keep tables minimal. Use them for reference, not explanation.
 | "In summary" | (Let whitespace speak) |
 | "Key takeaway" | (Recursive insight) |
 
----
-
-## Examples in Context
+## examples in context
 
 ### Full Article Section: Before
 
@@ -344,9 +319,7 @@ Clarify before design.
 `requirements.md` with answers, visual references, ready for specification.
 ```
 
----
-
-## References
+## references
 
 - Minimalist technical writing (inspired by system documentation and CLI help)
 - Engineering-focused vocabulary (computation, not motivation)

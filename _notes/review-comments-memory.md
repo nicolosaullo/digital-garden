@@ -2,41 +2,35 @@
 title: extract PR feedback into institutional knowledge
 ---
 
-# learn from code review
-
-Extract review insights from GitHub PRs. Parse patterns. Preserve lessons. Prevent regressions.
-
----
+extract review insights from github prs. parse patterns. preserve lessons. prevent regressions.
 
 ## setup: github cli
 
 ### install
 
-**Install via:**
+**install via:**
 ```bash
-# Windows
+# windows
 winget install --id GitHub.cli
 
-# macOS
+# macos
 brew install gh
 
-# Linux: apt install gh | dnf install gh
+# linux: apt install gh | dnf install gh
 ```
 
 ### authenticate
 
 ```bash
 gh auth login
-# Select GitHub.com → HTTPS → Web browser login
+# select github.com → https → web browser login
 ```
 
-Verify:
+verify:
 ```bash
 gh auth status
 gh pr list --limit 5
 ```
-
----
 
 ## step 1: fetch recent prs
 
@@ -44,14 +38,12 @@ gh pr list --limit 5
 can you fetch the 10 most recent prs opened by me?
 ```
 
-Claude Code executes:
+claude code executes:
 ```bash
 gh pr list --author=@me --limit 10
 ```
 
-Returns: PR number, title, branch, status, date.
-
----
+returns: pr number, title, branch, status, date.
 
 ## step 2: filter merged + reviewed
 
@@ -59,15 +51,13 @@ Returns: PR number, title, branch, status, date.
 can you get only the ones merged and that received review comments?
 ```
 
-Claude Code:
-1. Fetch merged PRs: `gh pr list --author=@me --state merged --limit 50`
-2. Check review counts: `gh pr view $pr --json reviews | jq '.reviews | length'`
+claude code:
+1. fetch merged prs: `gh pr list --author=@me --state merged --limit 50`
+2. check review counts: `gh pr view $pr --json reviews | jq '.reviews | length'`
 
-Returns table: PR #, title, review count.
+returns table: pr #, title, review count.
 
-High review counts (10+) signal complexity. These PRs contain learning opportunities.
-
----
+high review counts (10+) signal complexity. these prs contain learning opportunities.
 
 ## step 3: retrieve review comments
 
@@ -75,106 +65,97 @@ High review counts (10+) signal complexity. These PRs contain learning opportuni
 can you retrieve all the comments in context so that we can learn from them?
 ```
 
-Claude Code:
+claude code:
 ```bash
 gh pr view 18642 --json reviews
 gh pr view 18642 --json comments
 ```
 
-Analyzes patterns across PRs. Compiles into REVIEW_LEARNINGS.md.
-
----
+analyzes patterns across prs. compiles into review_learnings.md.
 
 ## output: review_learnings.md
 
-Generated document structure:
+generated document structure:
 
-```
-
-**Key themes:**
-- Performance optimization (N+1 queries, batch operations)
-- Database function consolidation (remove legacy, feature flags)
-- Test coverage (>100% on new code, edge cases)
-- Backward compatibility (design for migration)
-- Code generation sync (XML, SQL table types)
-
----
+**key themes:**
+- performance optimization (n+1 queries, batch operations)
+- database function consolidation (remove legacy, feature flags)
+- test coverage (>100% on new code, edge cases)
+- backward compatibility (design for migration)
+- code generation sync (xml, sql table types)
 
 ## step 4: capture critical lessons
 
 ```
-/sublation-os:learn Learn from the PR feedback. Only learn critical comments about coding.
+/sublation-os:learn learn from the pr feedback. only learn critical comments about coding.
 ```
 
-Claude Code:
-1. Parses REVIEW_LEARNINGS.md
-2. Extracts coding patterns (not generic advice)
-3. Creates structured lessons:
-   - Context
-   - Lesson
-   - Application (steps)
-   - Example (before/after)
-   - Tags (searchable)
-4. Appends to `.sublation-os/memory/backend-lessons.md`
+claude code:
+1. parses review_learnings.md
+2. extracts coding patterns (not generic advice)
+3. creates structured lessons:
+   - context
+   - lesson
+   - application (steps)
+   - example (before/after)
+   - tags (searchable)
+4. appends to `.sublation-os/memory/backend-lessons.md`
 
-**Example: N+1 Query Performance**
+**example: n+1 query performance**
 
-**Lesson:** Always batch database queries. Never loop + fetch. Use SQL TVP (table-valued parameters).
+**lesson:** always batch database queries. never loop + fetch. use sql tvp (table-valued parameters).
 
-**Application:**
-1. Create SQL table type: `CREATE TYPE IntegerKeyTableType AS TABLE ([Key] INT)`
-2. Create batch function: `fnGetWorkItemUserProfileActorsBatch`
-3. Update CodeGenSettings.xml
+**application:**
+1. create sql table type: `create type integerkeyTabletype as table ([key] int)`
+2. create batch function: `fngetworkitemuserprofileactorsbatch`
+3. update codegensettings.xml
 
-**Tags:** `performance`, `N+1 queries`, `batch operations`
-
----
+**tags:** `performance`, `n+1 queries`, `batch operations`
 
 ## step 5: apply learnings
 
-Search lessons before coding:
+search lessons before coding:
 ```
-/sublation-os:recall N+1 queries
+/sublation-os:recall n+1 queries
 ```
 
-Or reference during implementation:
+or reference during implementation:
 ```
 /sublation-os:update-standards-references batch operations
 ```
 
----
-
 ## workflow loop
 
 ```
-Fetch PRs → Filter Reviewed → Parse Comments → Extract Lessons → Apply Lessons → Better PRs → Faster Approvals
+fetch prs → filter reviewed → parse comments → extract lessons → apply lessons → better prs → faster approvals
 ```
 
-Each feature submission redefines the system that builds it.
-
----
+each feature submission redefines the system that builds it.
 
 ## commands
 
-**GitHub CLI:**
+**github cli:**
 ```bash
-gh pr list --author=@me --limit 10                    # List your PRs
-gh pr list --state merged --limit 50                  # Merged only
-gh pr view 18642 --json reviews,comments              # PR details
-gh pr view 18642 --json reviews --jq '.reviews | length'  # Review count
+gh pr list --author=@me --limit 10                    # list your prs
+gh pr list --state merged --limit 50                  # merged only
+gh pr view 18642 --json reviews,comments              # pr details
+gh pr view 18642 --json reviews --jq '.reviews | length'  # review count
 ```
 
-**Sublation-OS:**
+**sublation-os:**
 ```
-/sublation-os:learn [instruction]              # Capture learning
-/sublation-os:recall [keyword]                 # Search lessons
-/sublation-os:update-standards-references      # Sync references
+/sublation-os:learn [instruction]              # capture learning
+/sublation-os:recall [keyword]                 # search lessons
+/sublation-os:update-standards-references      # sync references
 ```
-
----
 
 ## result
 
-Scattered review comments → Structured knowledge. Searchable by tag. Persistent across sessions.
+scattered review comments → structured knowledge. searchable by tag. persistent across sessions.
 
-Patterns emerge. Mistakes prevent. Code improves. Approvals accelerate.
+patterns emerge. mistakes prevent. code improves. approvals accelerate.
+
+## related
+
+- [[sublation 101]] – the six-step loop for feature development
+- [[context engineering]] – managing AI agent context windows
