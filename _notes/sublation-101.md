@@ -38,6 +38,11 @@ input: observations
 output: memory/*.md
 resolves: forgotten patterns
 
+**6. `/update-standards-references`**
+input: standards, memories
+output: updated agents and commands
+resolves: memory retrieval
+
 ## step 1: /shape-spec
 clarify before design.
 
@@ -264,7 +269,7 @@ var profile = user.profile;
 repository-pattern, null-handling, data-access
 ```
 
-## step 6: maintain
+## step 6: /update-standards-references
 synchronize agents with all knowledge.
 
 **input:** standards + memory files
@@ -281,11 +286,11 @@ run `/update-standards-references` to propagate:
 
 **team memory:** backend lessons, frontend patterns, testing strategies, architecture insights
 
-updates all agents (`.claude/agents/sublation-os/*.md`, `.cursor/agents/sublation-os/*.md`) with complete reference set.
+updates all agents and commands with complete reference set.
 
 ### why
 
-without sync: agents repeat mistakes, rediscover patterns already documented.
+without sync: repeat mistakes, rediscover patterns already documented.
 
 with sync: each feature compounds knowledge. system learns itself.
 
@@ -308,7 +313,7 @@ with sync: each feature compounds knowledge. system learns itself.
   → memory/*.md entries
 
 maintain
-  → all agents synchronized
+  → all agents/commands synchronized
 ```
 
 ## recursion
