@@ -121,7 +121,7 @@ search lessons before coding:
 
 or reference during implementation:
 ```
-/sublation-os:update-standards-references batch operations
+/sublation-os:consolidate-learnings batch operations
 ```
 
 ## workflow loop
@@ -146,7 +146,7 @@ gh pr view 18642 --json reviews --jq '.reviews | length'  # review count
 ```
 /sublation-os:learn [instruction]              # capture learning
 /sublation-os:recall [keyword]                 # search lessons
-/sublation-os:update-standards-references      # sync references
+/sublation-os:consolidate-learnings            # sync references
 ```
 
 ## result
